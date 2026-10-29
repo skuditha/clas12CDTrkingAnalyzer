@@ -33,7 +33,7 @@ import org.jlab.geom.prim.Point3D;
  * @author Tongtong
  */
 
-public class CrossesPass2TracksExtractor{   
+public class CrossesPass2TracksExtractorTransformer {   
     private static final Logger LOGGER = Logger.getLogger(Reader.class.getName()); 
        
     public static void main(String[] args) throws IOException {
