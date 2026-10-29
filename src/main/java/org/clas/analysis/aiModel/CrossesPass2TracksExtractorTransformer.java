@@ -107,11 +107,11 @@ public class CrossesPass2TracksExtractor{
                             for(int i = 0; i < 3; i++){
                                 String crsInfo;                               
                                 if(bstCrosses[i] != null){
-                                    crsInfo = String.format("%.4f,%.4f,%.4f,%d,%d", 
-                                            bstCrosses[i].point().x(), bstCrosses[i].point().y(), bstCrosses[i].point().z(), i+1,1);
+                                    crsInfo = String.format("%.4f,%.4f,%.4f,%d", 
+                                            bstCrosses[i].point().x(), bstCrosses[i].point().y(), bstCrosses[i].point().z(), i+1);
                                 } else {
-                                    crsInfo = String.format("%d,%d,%d,%d,%d", 
-                                            0, 0, 0,i+1, 0);
+                                    crsInfo = String.format("%d,%d,%d,%d", 
+                                            0, 0, 0,i+1);
                                 }                                
                                 writer.write(crsInfo + ",");                                                                 
                             }
@@ -124,19 +124,19 @@ public class CrossesPass2TracksExtractor{
                                     
                                     if(bmtClusters[i].bmtType() == Constants.BMTC){
                                         double z = (bmtClusters[i].originPoint().z() + bmtClusters[i].endPoint().z()) / 2;
-                                        clsInfo = String.format("%.4f,%.4f,%d,%d", 
-                                            r, z, i+4, 1);
+                                        clsInfo = String.format("%.4f,%.4f,%d", 
+                                            r, z, i+4);
                                     }
                                     else{
                                         double phi = (Math.atan2(bmtClusters[i].originPoint().y(), bmtClusters[i].originPoint().x()) + 
                                                 Math.atan2(bmtClusters[i].endPoint().y(), bmtClusters[i].endPoint().x())) / 2;
-                                        clsInfo = String.format("%.4f,%.4f,%d,%d", 
-                                            r, phi, i+4, 1);
+                                        clsInfo = String.format("%.4f,%.4f,%d", 
+                                            r, phi, i+4);
                                     }
                                 }
                                 else {
-                                    clsInfo = String.format("%d,%d,%d,%d", 
-                                            0, 0, i+4, 0);                                                                
+                                    clsInfo = String.format("%d,%d,%d",
+                                            0, 0, i+4);                                                                
                                 }
                                 
                                 writer.write(clsInfo + ",");                                      
