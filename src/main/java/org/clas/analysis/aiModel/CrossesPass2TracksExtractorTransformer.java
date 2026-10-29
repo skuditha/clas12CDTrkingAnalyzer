@@ -109,11 +109,9 @@ public class CrossesPass2TracksExtractor{
                                 if(bstCrosses[i] != null){
                                     crsInfo = String.format("%.4f,%.4f,%.4f,%d", 
                                             bstCrosses[i].point().x(), bstCrosses[i].point().y(), bstCrosses[i].point().z(), i+1);
-                                } else {
-                                    crsInfo = String.format("%d,%d,%d,%d", 
-                                            0, 0, 0,i+1);
+                                    writer.write(crsInfo + ",");
                                 }                                
-                                writer.write(crsInfo + ",");                                                                 
+                                                                                                 
                             }
                             
                             for(int i = 0; i < 6; i++){
@@ -133,13 +131,8 @@ public class CrossesPass2TracksExtractor{
                                         clsInfo = String.format("%.4f,%.4f,%d", 
                                             r, phi, i+4);
                                     }
-                                }
-                                else {
-                                    clsInfo = String.format("%d,%d,%d",
-                                            0, 0, i+4);                                                                
-                                }
-                                
-                                writer.write(clsInfo + ",");                                      
+                                    writer.write(clsInfo + ",");
+                                }                                                            
                             }                        
                             
                             String trackParameters = String.format("%.4f,%.4f,%.4f,%.4f,%.4f", 
