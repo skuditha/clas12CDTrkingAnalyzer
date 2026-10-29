@@ -134,7 +134,7 @@ public class CrossesPass2TracksExtractor{
                                     writer.write(clsInfo + ",");
                                 }                                                            
                             }                        
-                            
+                            writer.write("\n");
                             String trackParameters = String.format("%.4f,%.4f,%.4f,%.4f,%.4f", 
                                      trk.d0(), trk.phi0(), trk.q()/trk.pt(), trk.z0(), trk.tandip());
                             writer.write(trackParameters + "\n");
